@@ -24,6 +24,11 @@ const authReducer = (state = initialState, action) => {
                 error: action.error, 
                 loading: false
             });
+        case actionTypes.AUTH_LOGOUT:
+            return updateObject(state, {
+                idToken: null,
+                userId: null
+            });
         default:
             return state;
     }
